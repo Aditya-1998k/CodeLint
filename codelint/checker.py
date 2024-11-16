@@ -48,6 +48,17 @@ class CodeLint:
                         if not re.match(r"^[a-z_][a-z0-9_]*$", variable_name):
                             issues.append(f"Snake case issue on line {line_number}: {variable_name}")
         return issues
+    
+    def check_trailing_whitespace(self):
+        issues = []
+        with open(self.file_path, 'r') as file:
+            lines = file.readlines()
+            for i, line in enumerate(lines, start=1):
+                modified_lines = line.rstrip()
+                if modified_lines != line:
+                    issues.append(f"Line {i}: Trailing whitespace detected.")
+        return issues
+                
 
 
     def run_checks(self):
@@ -55,6 +66,7 @@ class CodeLint:
         issues.extend(self.check_line_length())
         issues.extend(self.check_indentation())
         issues.extend(self.check_snake_case())
+        issues.extend(self.check_trailing_whitespace())
         return issues
     
 

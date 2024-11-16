@@ -12,7 +12,7 @@ def sample_file(tmp_path):
         "    return 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\pass\n\n"
         "x=5\n\n"
         "     def another_function():\n"
-        "        pass\n"
+        "        pass  \n"
     )
     return file_path
 
@@ -30,3 +30,8 @@ def test_check_snake_case(sample_file):
     checker = CodeLint(str(sample_file))
     issues = checker.check_snake_case()
     assert len(issues) > 0, "Should detect non-snake_case variables"
+
+def test_check_trailing_whitespace(sample_file):
+    checker = CodeLint(str(sample_file))
+    issues = checker.check_trailing_whitespace()
+    assert len(issues) > 0, "Should detect trailing whitespace"
