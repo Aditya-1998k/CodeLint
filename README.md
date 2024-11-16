@@ -30,6 +30,8 @@ codelint <file.py>
 ```
 
 ### Pytest
+<img width="1437" alt="Screenshot 2024-11-16 at 8 14 18 PM" src="https://github.com/user-attachments/assets/d628ca8f-de04-4755-8eb6-0cd913355db4">
+
 ```
 pull the code
 pip install pytest
