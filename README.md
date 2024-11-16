@@ -16,6 +16,8 @@
 ```bash
 pip install codelint
 ```
+<img width="1330" alt="Screenshot 2024-11-16 at 4 01 43 PM" src="https://github.com/user-attachments/assets/039b7171-6661-4bf0-84d2-263025a99117">
+
 
 ### Usages:
 ```
