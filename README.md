@@ -15,6 +15,7 @@
 ### Using `pip`
 ```bash
 pip install codelint
+```
 
 ### Usages:
 ```
