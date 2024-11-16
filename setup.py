@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="codelint",
-    version="0.1",
+    version="0.2",
     packages=find_packages(),
     install_requires=[],
     entry_points={
@@ -11,6 +11,7 @@ setup(
         ],
     },
     author="Aditya Gupta",
+    author_email="aditya98gupta@gmail.com",
     description="A custom PEP 8 checker module",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
