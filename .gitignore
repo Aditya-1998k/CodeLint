@@ -1,0 +1,48 @@
+# Byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# pytest cache
+.pytest_cache/
+
+# Distribution / Packaging
+*.egg-info/
+build/
+dist/
+
+# Logs
+*.log
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Generated files
+*.coverage
+coverage.xml
+htmlcov/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# User-specific files
+*.env
+.env
+*.secret
+
+# Test output
+test-results/
+*.tmp
