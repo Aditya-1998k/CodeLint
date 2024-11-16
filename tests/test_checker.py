@@ -11,7 +11,7 @@ def sample_file(tmp_path):
         "def SampleFunction():\n"
         "    return 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\pass\n\n"
         "x=5\n\n"
-        "    def another_function():\n"
+        "     def another_function():\n"
         "        pass\n"
     )
     return file_path
@@ -25,3 +25,8 @@ def test_indentation(sample_file):
     checker = CodeLint(str(sample_file))
     issues = checker.check_indentation()
     assert len(issues) > 0, "Should detect incorrect indentation"
+
+def test_check_snake_case(sample_file):
+    checker = CodeLint(str(sample_file))
+    issues = checker.check_snake_case()
+    assert len(issues) > 0, "Should detect non-snake_case variables"

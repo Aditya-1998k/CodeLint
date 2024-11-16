@@ -7,6 +7,7 @@
 ## Features
 - **Line Length Check**: Detects lines exceeding a specified maximum length.
 - **Indentation Check**: Flags incorrect visual indentation.
+- **SnakeCase Check**: Flags if incorrect variable or function name
 
 ---
 
