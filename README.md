@@ -20,6 +20,8 @@ pip install codelint
 
 
 ### Usages:
+<img width="701" alt="Screenshot 2024-11-16 at 4 04 01 PM" src="https://github.com/user-attachments/assets/d8b8f5be-1eef-473c-8f57-aed34b49b15c">
+
 ```
 pip install codelint
 bash command:
