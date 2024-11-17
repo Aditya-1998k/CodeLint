@@ -54,8 +54,8 @@ class CodeLint:
         with open(self.file_path, 'r') as file:
             lines = file.readlines()
             for i, line in enumerate(lines, start=1):
-                modified_lines = line.rstrip()
-                if modified_lines != line:
+                # If rstrip() removes any characters, it means trailing whitespace exists
+                if line.rstrip("\r\n") != line.rstrip():
                     issues.append(f"Line {i}: Trailing whitespace detected.")
         return issues
                 

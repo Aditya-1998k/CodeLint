@@ -5,14 +5,16 @@ from codelint.checker import CodeLint
 
 @pytest.fixture
 def sample_file(tmp_path):
-    """Creates a temporary Python file for testing."""
+    """Creates a temporary Python file with trailing whitespace for testing."""
     file_path = tmp_path / "sample.py"
     file_path.write_text(
         "def SampleFunction():\n"
-        "    return 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\pass\n\n"
-        "x=5\n\n"
-        "     def another_function():\n"
-        "        pass  \n"
+        "    return 'rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr\\pass'\n"
+        " \n"  # Empty line, no trailing whitespace
+        "x=5\n"
+        "\n"  # Another empty line, no trailing whitespace
+        "     def another_function():\n"  # Improper indentation, no trailing whitespace
+        "        pass\n"  # Properly indented, no trailing whitespace
     )
     return file_path
 
@@ -34,4 +36,6 @@ def test_check_snake_case(sample_file):
 def test_check_trailing_whitespace(sample_file):
     checker = CodeLint(str(sample_file))
     issues = checker.check_trailing_whitespace()
+    import pdb; pdb.set_trace()
+    print(issues)
     assert len(issues) > 0, "Should detect trailing whitespace"
