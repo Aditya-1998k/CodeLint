@@ -32,6 +32,7 @@ def test_indentation(sample_file):
     assert len(issues) > 0, "Should detect incorrect indentation"
 
 def test_check_snake_case(sample_file):
+    import pdb; pdb.set_trace()
     checker = CodeLint(str(sample_file))
     issues = checker.check_snake_case()
     assert len(issues) > 0, "Should detect non-snake_case variables"
